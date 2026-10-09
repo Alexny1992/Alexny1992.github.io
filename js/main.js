@@ -126,11 +126,8 @@
   /* ---------- Statement: split into words, light them up on scroll ---------- */
   const statement = document.querySelector('[data-statement]');
   const statementText = statement.querySelector('[data-words]');
-  const highlight = new Set(['systems', 'answers']);
   const words = statementText.textContent.trim().split(/\s+/);
-  statementText.innerHTML = words
-    .map(w => `<span class="w${highlight.has(w.replace(/\W/g, '')) ? ' hl' : ''}">${w}</span>`)
-    .join(' ');
+  statementText.innerHTML = words.map(w => `<span class="w">${w}</span>`).join(' ');
   const wordEls = statementText.querySelectorAll('.w');
 
   /* ---------- Scroll-driven effects, batched into one frame ---------- */

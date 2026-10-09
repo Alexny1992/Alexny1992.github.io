@@ -63,7 +63,6 @@
 
       <div class="hero-inner" data-hero-inner>
         <p class="hero-status"><span class="status-dot" aria-hidden="true"></span>Open to data &amp; software engineering roles</p>
-        <p class="eyebrow hero-eyebrow">Alex Wang · Data, AI &amp; Software</p>
         <h1 id="hero-title" class="hero-title">
           <span class="line">I build with data.</span>
           <span class="line grad">I see in frames.</span>
@@ -121,7 +120,7 @@
               <h3 class="case-title">Making the case for LLM routing</h3>
               <div class="case-metric">
                 <span class="metric-value">68% <span class="arrow" aria-hidden="true">→</span> 85%</span>
-                <span class="metric-label">reported routing accuracy in a client comparison of intent-based and LLM routing</span>
+                <span class="metric-label">routing accuracy, intent matching vs. an LLM router, shown to a client</span>
               </div>
               <ol class="flow" aria-label="How it worked">
                 <li>Real customer conversations</li>
@@ -170,8 +169,8 @@
               <span class="case-index">03</span>
               <h3 class="case-title">A weekly pipeline that runs itself</h3>
               <div class="case-metric">
-                <span class="metric-value">Every Monday</span>
-                <span class="metric-label">scheduled on Google Cloud, with no one pressing a button</span>
+                <span class="metric-value">3 <span class="arrow" aria-hidden="true">→</span> 1</span>
+                <span class="metric-label">dependent Salesforce lookups, chained into one weekly job that runs itself</span>
               </div>
               <ol class="flow" aria-label="How it worked">
                 <li>Cloud Scheduler fires on Monday</li>
@@ -222,6 +221,7 @@
 
         <div class="projects">
           <a class="project reveal" href="https://github.com/Alexny1992/Server-Latency-Discord-Bot" target="_blank" rel="noopener">
+            <img class="project-shot" src="assets/proj-latency.jpg" alt="Discord bot replies charting recent ping for two game channels" width="960" height="540" loading="lazy" decoding="async">
             <span class="project-lang"><i style="--c:#3572A5"></i>Python</span>
             <h3>Server Latency Bot</h3>
             <p>A Discord bot that pings 40 game servers at once, stores the results in PostgreSQL and charts the last five minutes of latency on request.</p>
@@ -230,6 +230,7 @@
           </a>
 
           <a class="project reveal" href="https://github.com/Alexny1992/fetch_analytics_engineer" target="_blank" rel="noopener">
+            <img class="project-shot" src="assets/proj-warehouse.jpg" alt="Entity-relationship diagram of the receipts, items, brands and users tables" width="960" height="540" loading="lazy" decoding="async">
             <span class="project-lang"><i style="--c:#e38c00"></i>SQL · Terraform</span>
             <h3>Receipts Data Warehouse</h3>
             <p>Modeled raw receipt JSON as a relational schema, provisioned S3 and IAM with Terraform, loaded the data into Snowflake and audited its quality.</p>
@@ -238,6 +239,7 @@
           </a>
 
           <a class="project reveal" href="https://github.com/Alexny1992/JetBlue-Flight-Delay-Prediction" target="_blank" rel="noopener">
+            <img class="project-shot" src="assets/proj-forecast.jpg" alt="Prophet forecast of flight delays from 2006 to 2024 with its uncertainty band" width="960" height="540" loading="lazy" decoding="async">
             <span class="project-lang"><i style="--c:#DA5B0B"></i>Jupyter</span>
             <h3>Flight Delay Forecasting</h3>
             <p>Forecasts U.S. flight delays, using Spark to process the data and Prophet to model the time series, tuned with cross-validation.</p>
@@ -246,6 +248,7 @@
           </a>
 
           <a class="project reveal" href="https://github.com/Alexny1992/NBA_Analysis" target="_blank" rel="noopener">
+            <img class="project-shot" src="assets/proj-nba.jpg" alt="Scatter plot of team PER against win ratio for the 2019–20 season, with a regression line" width="960" height="540" loading="lazy" decoding="async">
             <span class="project-lang"><i style="--c:#3572A5"></i>Python</span>
             <h3>NBA Efficiency &amp; Wins</h3>
             <p>A regression study of whether team efficiency (PER) predicts win ratio and playoff qualification, with the results in a Tableau dashboard.</p>
@@ -302,13 +305,13 @@
             <button type="button" data-lightbox aria-label="Open photo of mushroom risotto">
               <img data-photo="food" src="assets/risotto.jpg" alt="Mushroom risotto with chives on a dark plate against a violet backdrop" width="1068" height="1600" loading="lazy" decoding="async">
             </button>
-            <figcaption>From my kitchen</figcaption>
+            <figcaption>Mushroom risotto</figcaption>
           </figure>
           <figure class="shot shot-e reveal">
-            <button type="button" data-lightbox aria-label="Open photo of a graphics card">
-              <img data-photo="workbench" src="assets/workbench.jpg" style="--focus: 50% 100%" alt="A graphics card inside a PC case, lit by teal fan lights" width="1600" height="1068" loading="lazy" decoding="async">
+            <button type="button" data-lightbox aria-label="Open photo of vegan lasagna">
+              <img data-photo="lasagna" src="assets/lasagna.jpg" alt="A slice of vegan lasagna on a teal plate against a dark background" width="1600" height="1067" loading="lazy" decoding="async">
             </button>
-            <figcaption>Where the models run</figcaption>
+            <figcaption>Vegan lasagna</figcaption>
           </figure>
         </div>
       </div>
@@ -322,7 +325,6 @@
         </div>
 
         <div class="about-copy reveal">
-          <p class="eyebrow">About</p>
           <h2 id="about-title" class="section-title">Hi, I’m Alex.</h2>
           <p class="about-lede">
             I’m happiest in the gap between a messy problem and something that works.
@@ -359,10 +361,9 @@
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="contact-glow" aria-hidden="true"></div>
       <div class="contact-inner reveal">
-        <p class="eyebrow eyebrow-dark">Contact</p>
         <h2 id="contact-title" class="contact-title">Let’s build<br><span class="grad">something good.</span></h2>
         <p class="contact-sub">
-          Open to data, analytics engineering and software engineering roles, and always happy to talk shop.
+          Hiring, collaborating, or just want to talk shop? Email is the best way to reach me.
         </p>
         <div class="contact-actions">
           <a class="btn btn-light btn-lg" aria-disabled="true" data-email>Email coming soon</a>

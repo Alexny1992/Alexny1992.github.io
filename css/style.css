@@ -20,14 +20,13 @@
   --link-dark: #8fcbe2;
 
   --grad: linear-gradient(92deg, #b8e4f2 0%, #a3cdec 38%, #e0c2e0 70%, #f8d3b0 100%); /* stops kept at similar brightness so no word sags */
-  --metric-grad: linear-gradient(92deg, #0a5a78, #9b5d57);
   --flow-grad: linear-gradient(180deg, #7fc0d8, #e8b892);
   --accent: #3f97b8;
   /* glow colours as r g b, so each use can pick its own alpha */
   --glow-1: 63 151 184;
   --glow-2: 196 140 190; /* dusk mauve: warm tones turn muddy brown at low alpha on near-black */
   --glow-3: 166 220 236;
-  --dim: #282e3c;
+  --dim: #5a6274;
   --surface-hover: #eceef1;
   --nav-bg: rgba(10, 13, 22, 0.82);
   --footer-ink: #7e8697;
@@ -256,7 +255,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   padding: calc(var(--nav-h) + 40px) var(--gutter) clamp(40px, 7vh, 72px);
   will-change: transform, opacity;
 }
-.hero-eyebrow { color: rgba(255, 255, 255, 0.9); margin-bottom: 18px; text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45); }
 .hero-lede { text-shadow: 0 1px 16px rgba(0, 0, 0, 0.35); }
 .hero-title {
   font-size: clamp(2.9rem, 8.6vw, 7.4rem);
@@ -278,7 +276,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 /* staggered entrance */
 .js .hero-status,
-.js .hero-eyebrow,
 .js .hero-title .line,
 .js .hero-lede,
 .js .hero-actions,
@@ -286,7 +283,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   animation: rise 1.2s var(--ease) both;
 }
 .js .hero-status { animation-delay: 0.4s; }
-.js .hero-eyebrow { animation-delay: 0.5s; }
 .js .hero-title .line:nth-child(1) { animation-delay: 0.65s; }
 .js .hero-title .line:nth-child(2) { animation-delay: 0.8s; }
 .js .hero-lede { animation-delay: 1s; }
@@ -312,7 +308,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
-.hero-status + .hero-eyebrow { display: block; }
 .status-dot {
   position: relative;
   width: 8px;
@@ -366,7 +361,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   background: var(--deep);
   color: var(--white);
 }
-.js .statement { --p: 0; height: 180vh; }
+.js .statement { --p: 0; height: 150vh; }
 .statement-sticky {
   position: relative;
   isolation: isolate;
@@ -453,12 +448,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   transition: color 0.35s ease-out;
 }
 .statement-text .w.lit { color: var(--white); }
-.statement-text .w.lit.hl {
-  background: var(--grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
 
 /* ==========================================================================
    Sections
@@ -495,6 +484,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   gap: 24px 64px;
+  grid-template-rows: auto 1fr;
   padding: clamp(28px, 5vw, 56px);
   background: var(--white);
   border-radius: var(--radius);
@@ -526,19 +516,16 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   line-height: 1;
   letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
-  background: var(--metric-grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--ink);
 }
 .metric-value .arrow { font-weight: 500; }
 .metric-label {
   display: block;
   max-width: 24em;
   margin-top: 12px;
-  font-size: 0.92rem;
+  font-size: 0.97rem;
   line-height: 1.45;
-  color: var(--muted);
+  color: var(--ink-2);
 }
 /* "How it worked": a tiny architecture view under the metric */
 .flow {
@@ -547,7 +534,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   gap: 14px;
   margin-top: 32px;
   padding-left: 22px;
-  font-size: 0.9rem;
+  font-size: 0.97rem;
   line-height: 1.35;
   color: var(--ink-2);
   list-style: none;
@@ -586,7 +573,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   margin-bottom: 6px;
 }
 .case-body dd { color: var(--ink-2); }
-.case .tags { grid-column: 2; }
+.case-head { grid-row: span 2; }
+.case .tags { grid-column: 2; align-self: start; }
 
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tags li {
@@ -601,6 +589,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 @media (max-width: 860px) {
   .case { grid-template-columns: 1fr; }
+  .case-head { grid-row: auto; }
   .case .tags { grid-column: auto; }
 }
 
@@ -669,6 +658,15 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   color: var(--muted);
 }
 .project-lang i { width: 9px; height: 9px; border-radius: 50%; background: var(--c); }
+.project-shot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 0 0 1px var(--line);
+  margin-bottom: 8px;
+}
 .project h3 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
 .project p { color: var(--ink-2); flex: 1; }
 .project .tags li { background: var(--white); }
@@ -764,7 +762,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
     radial-gradient(100% 90% at 90% 100%, rgb(var(--glow-2) / 0.5), transparent 60%),
     var(--portrait-base);
 }
-.about-copy .eyebrow { margin-bottom: 14px; }
 .about-lede {
   margin: 22px 0 22px;
   font-size: clamp(1.3rem, 2.2vw, 1.7rem);
@@ -841,7 +838,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   background: linear-gradient(90deg, transparent, rgb(var(--glow-3) / 0.6), transparent);
 }
 .contact-inner { max-width: 760px; }
-.contact-inner .eyebrow { margin-bottom: 18px; }
 .contact-title {
   font-size: clamp(2.8rem, 8vw, 6.2rem);
   font-weight: 700;
