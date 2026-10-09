@@ -745,7 +745,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   gap: clamp(40px, 7vw, 96px);
   align-items: start;
 }
-.portrait { position: sticky; top: calc(var(--nav-h) + 32px); }
 .portrait img,
 .portrait-placeholder {
   width: 100%;
@@ -802,7 +801,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .offclock p { color: var(--muted); font-size: 0.97rem; }
 @media (max-width: 860px) {
   .about { grid-template-columns: 1fr; }
-  .portrait { position: static; max-width: 320px; }
+  .portrait { max-width: 320px; }
 }
 
 /* ==========================================================================
