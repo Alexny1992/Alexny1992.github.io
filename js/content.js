@@ -3,7 +3,7 @@
 window.siteContent = {
   email: 'alexwang.ny1992@gmail.com',
   github: 'https://github.com/Alexny1992',
-  linkedin: '',
+  linkedin: 'www.linkedin.com/in/alexwangdev24',
   resume: '',
   siteUrl: 'https://alexny1992.github.io/',
   availability: 'Open to data & software engineering roles',
